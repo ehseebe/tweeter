@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta charset="utf-8">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -45,17 +46,17 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
-      I'm baby gochujang waistcoat tote bag 90's pug enamel pin trust fund vaporware portland taiyaki copper mug hammock. Franzen subway tile 3 wolf moon lo-fi ramps skateboard. Pickled messenger bag hot chicken freegan banjo lumbersexual selfies pabst readymade PBR&B chambray skateboard offal snackwave forage. Trust fund master cleanse truffaut beard asymmetrical poutine. Vegan lomo edison bulb, YOLO migas taiyaki 90's single-origin coffee tumeric chambray vape gluten-free.
-
-Microdosing schlitz waistcoat, crucifix squid snackwave copper mug seitan. Pour-over cold-pressed swag portland bushwick, pabst vegan lomo cray marfa palo santo beard trust fund blog bitters. Health goth vape cloud bread fanny pack, microdosing selfies beard synth. Tumblr iPhone celiac hella, health goth hashtag master cleanse authentic. Pickled pour-over wolf, cardigan ethical gluten-free pug blog retro.
-
-Poutine pour-over dreamcatcher, readymade activated charcoal humblebrag godard viral next level messenger bag vinyl drinking vinegar. Church-key put a bird on it quinoa, drinking vinegar food truck portland succulents skateboard yr synth. Raw denim heirloom lo-fi snackwave asymmetrical bicycle rights vaporware, sriracha vice XOXO food truck. Mustache leggings vexillologist pickled bitters slow-carb polaroid fingerstache squid truffaut before they sold out disrupt everyday carry. Sartorial butcher cornhole, godard green juice prism gastropub narwhal biodiesel leggings distillery viral.
-
-Heirloom kitsch +1 whatever artisan irony yuccie, succulents fixie twee occupy disrupt yr crucifix art party. Marfa pabst mixtape put a bird on it live-edge kogi. Austin coloring book pitchfork marfa chillwave chartreuse hammock single-origin coffee chia. Pok pok taiyaki hell of pour-over ugh succulents.
-
-Marfa fanny pack actually activated charcoal neutra artisan raw denim chia wayfarers pork belly cloud bread. Tattooed deep v activated charcoal bespoke vice roof party, fam four dollar toast kale chips. Migas vinyl chambray pabst flexitarian lumbersexual ramps lomo franzen hell of microdosing bitters occupy humblebrag. Pitchfork meggings next level, pop-up plaid shaman vegan. Blog yuccie messenger bag, mustache kale chips succulents godard literally live-edge beard humblebrag brunch slow-carb squid.
-
-Dummy text? More like dummy thicc text, amirite?
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="post" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
 
     </main>
 
