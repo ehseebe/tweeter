@@ -8,8 +8,10 @@
   padding: 1.5em;
   justify-content: space-between;
   align-items: center;
+  font-size: 150%;
  }
 
  .new-tweet {
   font-family: Source Sans Pro;
+  font-size: 60%;
  }
