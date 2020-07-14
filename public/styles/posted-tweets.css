@@ -40,8 +40,13 @@
 .tweet-content {
   display: flex;
   width: 100%;
+  height: 60px;
   border-bottom: solid;
   font-weight: 700;
+}
+
+.tweet-content p {
+  margin: 15px 0px 0px 10px;
 }
 
 .article-tweet-footer {
