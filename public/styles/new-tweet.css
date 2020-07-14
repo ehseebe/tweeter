@@ -15,13 +15,14 @@ input, textarea, style {
   display: flex;
   width: 100%;
   height: 30px;
+  padding-top: 0.30em;
   background-color: transparent;
   border: none;
   outline: none;
   resize: none;
-  font-size: large;
+  font-size: small;
   color: #545149;
-  font-weight: 700;
+  font-weight: 300;
   font-family: Source Sans Pro, sans-serif;
 }
 
@@ -33,7 +34,6 @@ input, textarea, style {
   padding-bottom: 0.60em;
   font-size: medium;
   color: #545149;
-  font-weight: bold;
 }
 
 /* character counter and button */
