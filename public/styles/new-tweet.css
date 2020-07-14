@@ -1,13 +1,15 @@
 
-container {
+.container {
   display: flex;
-  width: 75%;
+  flex-direction: column-reverse;
+
 }
 
 .new-tweet {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
+  order: -1;
 }
 
 /* form input field */
