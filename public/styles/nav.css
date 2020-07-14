@@ -1,4 +1,5 @@
  
+ /* nav bar with logo and tweet-prompt */
  nav {
   font-family: Bungee, sans-serif;
   background-color: #4056A1;
@@ -11,6 +12,7 @@
   font-size: 150%;
  }
 
+ /* tweet-prompt and arrows */
  .new-tweet-prompt {
   display: flex;
   flex-direction: column;
