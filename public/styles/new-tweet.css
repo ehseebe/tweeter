@@ -16,6 +16,7 @@ input, textarea, input, style {
   height: 30px;
   background-color: transparent;
   border: none;
+  outline: none;
   font-size: large;
   font-weight: 700;
   font-family: Source Sans Pro, sans-serif;
