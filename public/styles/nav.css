@@ -7,11 +7,19 @@
   display: flex;
   padding: 1.5em;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-size: 150%;
  }
 
  .new-tweet-prompt {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   font-family: Source Sans Pro;
-  font-size: 60%;
+  font-size: 50%;
+ }
+
+ .new-tweet-prompt-arrows {
+   padding-top: 0.3em
  }
