@@ -22,6 +22,7 @@ body {
   font-family: Source Sans Pro;
 }
 
+/* page body for tweets */
 .container {
   display: flex;
   justify-content: center;
