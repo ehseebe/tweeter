@@ -23,9 +23,9 @@ input, textarea, style {
   border-bottom: solid;
   outline: none;
   resize: none;
-  font-size: small;
+  font-size: medium;
   color: #545149;
-  font-weight: 300;
+  font-weight: 700;
   font-family: Source Sans Pro, sans-serif;
 }
 
