@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+
 //loops through tweets, applies form, outputs to page
 const renderTweets = (tweetData) => {
   for(let item of tweetData) {
@@ -58,10 +60,19 @@ const createTweetElement = (tweet) => {
   return $tweet;
 }
 
-
+//AJAX magic - handles tweet submissions, posts tweets to page
 $(document).ready(function() {
-  $('#submit-tweet').on('submit', (event) => {
+  $('#submit-tweet').on('submit', function (event) {
     event.preventDefault();
+
+    const tweetValue = $( this ).find('input').val().length;
+
+    if (tweetValue < 1) {
+      alert('Enter a tweet!')
+    } else if (tweetValue > 140) {
+      alert('Your tweet is too long!')
+    }
+    
   });
 
   const loadTweets = 
@@ -78,6 +89,5 @@ $(document).ready(function() {
   .always(function() {
     console.log( "complete" );
   });
-
   
 })
