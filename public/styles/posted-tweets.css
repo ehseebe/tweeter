@@ -15,6 +15,10 @@
   padding: 1em;
 }
 
+.article-tweet:hover {
+  box-shadow: 10px 10px #BBC5F2;
+}
+
 .article-tweet-header {
   display: flex;
   width: 100%;
@@ -33,8 +37,13 @@
 }
 
 .tweet-handle {
-  color: #BFD4E3;
+  visibility: hidden;
+}
+
+.article-tweet:hover .tweet-handle {
+  color: #BBC5F2;
   font-weight: 700;
+  visibility: visible;
 }
 
 .tweet-content {
