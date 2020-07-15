@@ -10,9 +10,9 @@
   justify-content: space-between;
   align-items: flex-start;
   font-size: 150%;
-  /* position: fixed;
+  position: fixed;
   top: 0;
-  width: 100%; */
+  width: 100%;
  }
 
  /* tweet-prompt and arrows */
