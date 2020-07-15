@@ -62,32 +62,46 @@ const createTweetElement = (tweet) => {
 
 //AJAX magic - handles tweet submissions, posts tweets to page
 $(document).ready(function() {
+  
+  const loadTweets = function() {
+    $.getJSON('http://localhost:8080/tweets', (data) => {
+      console.log('success');
+      renderTweets(data);
+    })
+    .done(function() {
+      console.log( "second success" );
+    })
+    .fail(function() {
+      console.log( "error" );
+    })
+    .always(function() {
+      console.log( "complete" );
+    });
+  }
+
+  loadTweets();
+
   $('#submit-tweet').on('submit', function (event) {
     event.preventDefault();
 
-    const tweetValue = $( this ).find('input').val().length;
+    const $tweetValue = $( this ).find('input').val();
 
-    if (tweetValue < 1) {
+    if ($tweetValue.length < 1) {
       alert('Enter a tweet!')
-    } else if (tweetValue > 140) {
+    } else if ($tweetValue.length > 140) {
       alert('Your tweet is too long!')
+    } else {
+      
+      $.post( "http://localhost:8080/tweets", ($( this ).serialize()), function(result) {
+        //empty tweet-container
+        $('#tweet-container').empty();
+        loadTweets();
+      }); 
+
+      $('form').trigger('reset');
+      
     }
     
-  });
-
-  const loadTweets = 
-  $.getJSON('http://localhost:8080/tweets', (data) => {
-    console.log('success');
-    renderTweets(data);
-  })
-  .done(function() {
-    console.log( "second success" );
-  })
-  .fail(function() {
-    console.log( "error" );
-  })
-  .always(function() {
-    console.log( "complete" );
   });
   
 })
