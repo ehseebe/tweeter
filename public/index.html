@@ -28,95 +28,90 @@
     <!-- Top nav bar (fixed) -->
     <nav>
 
-      <span>tweeter</span>
+<!-- tweeter logo -->
+      <span>tweeter</span>  
 
+<!-- nav new tweet prompt with arrows -->
+      <span class="new-tweet-prompt">
+          <span class="new-tweet-prompt-text">
+            <b>Write</b> a new tweet
+          </span>
 
-<span class="new-tweet-prompt">
-      <span class="new-tweet-prompt-text">
-        <b>Write</b> a new tweet
+          <span class="new-tweet-prompt-arrows">
+          <img src="/images/nav-red-arrows.png" alt="Red arrows" width="15" height="17">
+          </span>
       </span>
-
-      <span class="new-tweet-prompt-arrows">
-        <img src="/images/nav-red-arrows.png" alt="Red arrows" width="15" height="17">
-      </span>
-    </span>
-      
       
     </nav>
 
-    <header class='profile'>
-      <div>
+<!-- main user profile picture and name -->
+      <header class='profile'>
+        <div>
           <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
+        </div>
+  
+        <div>
           <h2>Your Name</h2>
-      </div>
-  </header>
+        </div>
+      </header>
 
     <!-- Page-specific (main) content here -->
 <main class="container">
 
   <section class="new-tweet">
     <section class="tweet-form">
-
+<!-- prompt header for new tweet -->
           <h2>Compose Tweet</h2>
-       <form method="post" action="/tweets">
-        
-        <label for="tweet-text">
-         </label>
 
-        <textarea placeholder="What are you humming about?" name="text" id="tweet-text">
-          </textarea>
+      <form method="post" action="/tweets">
+<!-- form to compose tweet -->
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?">
+            </textarea>
+<!-- contains tweet button and character counter -->
+            <section class="tweet-form-footer">
+            <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+          </section>   
 
-      <div>
-        <section class="tweet-form-footer">
-          <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-        </section>
-      </div>
+      </form>
 
-        </form>
-        
-      </section>
+    </section>
   </section>
 
   <article class='article-tweet'>
 
       <header class='article-tweet-header'>
+<!-- contains profile pic and name -->
         <span class='tweet-profile'>
-
           <span class='tweet-profile-pic'>
             <img src="https://i.imgur.com/73hZDYK.png" alt="profile picture" width="35" height="35">
               </span>
-
-                <span class='tweet-profile-name'>
+              <span class='tweet-profile-name'>
                   Fig Newton
-                </span>
-                <!-- this span works here, not sure why -->
-              </span> 
+            </span>
+        </span> 
+<!-- contains tweet handle -->
               <span class='tweet-handle'>
               @FigsyNewts
             </span>
-        
       </header>
-
+<!-- main tweet body -->
         <div class="tweet-content">
           <p>Howdy Doody!</p>
         </div>
 
         <footer class='article-tweet-footer'>
+<!-- tweet posted date -->
           <span class='tweet-date'>
             2 days ago
-          </span>
-
+            </span>
+<!-- social icons - flag, retweet, heart -->
           <span class='tweet-icons'>
             <img src="/images/flag-icon.png" alt="flag-icon" width="10" height="10">
-
             <img src="/images/retweet-icon.png" alt="retweet-icon" width="10" height="10">
-
             <img src="/images/heart-icon.png" alt="heart-icon" width="10" height="10">
           </span>
+
         </footer>
 
   </article>
