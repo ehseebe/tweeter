@@ -34,3 +34,11 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: medium;
+   height: 80px;
+ }
