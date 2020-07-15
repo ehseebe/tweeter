@@ -4,6 +4,10 @@
   align-items: flex-start;
 }
 
+#tweet-container {
+  width: 100%;
+}
+
 .article-tweet {
   display: flex;
   flex-direction: column;
