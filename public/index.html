@@ -59,36 +59,47 @@
 
   <section class="new-tweet">
     <section class="tweet-form">
-      <h2>Compose Tweet</h2>
-       <form method="post" action="/tweets">
-        <label for="tweet-text">What are you humming about?
-         </label>
-           <textarea name="text" id="tweet-text"></textarea>
-            <div>
-            <section class="tweet-form-footer">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-           </div>
-          </section>
-         </form>
-        </section>
-       </section>
 
-       <article class='article-tweet'>
+          <h2>Compose Tweet</h2>
+       <form method="post" action="/tweets">
+        
+        <label for="tweet-text">
+         </label>
+
+        <textarea placeholder="What are you humming about?" name="text" id="tweet-text">
+          </textarea>
+
+      <div>
+        <section class="tweet-form-footer">
+          <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+        </section>
+      </div>
+
+        </form>
+        
+      </section>
+  </section>
+
+  <article class='article-tweet'>
 
       <header class='article-tweet-header'>
         <span class='tweet-profile'>
+
           <span class='tweet-profile-pic'>
             <img src="https://i.imgur.com/73hZDYK.png" alt="profile picture" width="35" height="35">
-          </span>
-          <span class='tweet-profile-name'>
-            Fig Newton
-          </span>
-        </span>
-          <span class='tweet-handle'>
-            @FigsyNewts
-          </span>
-        </header>
+              </span>
+
+                <span class='tweet-profile-name'>
+                  Fig Newton
+                </span>
+                <!-- this span works here, not sure why -->
+              </span> 
+              <span class='tweet-handle'>
+              @FigsyNewts
+            </span>
+        
+      </header>
 
         <div class="tweet-content">
           <p>Howdy Doody!</p>
@@ -106,10 +117,9 @@
 
             <img src="/images/heart-icon.png" alt="heart-icon" width="10" height="10">
           </span>
-          
         </footer>
 
-      </article>
+  </article>
 
 </main>
     
