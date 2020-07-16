@@ -1,15 +1,13 @@
+/* page footer style and placement */
 
 .footer-text {
   display: flex;
-  color:  #545149;
+  color: #545149;
   height: 5rem;
+  padding-bottom: 1rem;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   font-size: medium;
+  bottom: 0;
+  width: 100%;
 }
-
-
-/*add a new div that has header and container
-
-remove display flex from body
-
