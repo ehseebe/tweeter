@@ -2,13 +2,12 @@
  /* nav bar with logo and tweet-prompt */
  nav {
   font-family: Bungee, sans-serif;
-  background-color: #4056A1;
   color: #FFFFFF;
-  height: 120px;
+  height: 5rem;
   display: flex;
   padding: 1.5em;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   font-size: 150%;
   position: fixed;
   top: 0;
