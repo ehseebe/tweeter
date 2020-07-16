@@ -31,7 +31,7 @@ input, textarea, style {
 .tweet-form {
   display: flex;
   flex-direction: column;
-  padding-top: 2em;
+  padding-top: 1em;
   padding-bottom: 0.60em;
   font-size: large;
   color: #545149;
