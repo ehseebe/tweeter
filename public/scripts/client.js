@@ -10,6 +10,14 @@ const renderTweets = (tweetData) => {
 const createTweetElement = (tweet) => {
   //need to make a function to parse date and subtract
   let readableDate = new Date(tweet.created_at);
+  let currentDate = new Date();
+  let daysPassed = new Date(currentDate-readableDate);
+
+
+  console.log("post date", readableDate, typeof readableDate)
+  console.log("todays date", currentDate);
+  console.log("days passed?", daysPassed)
+  
 
   const $tweet = `
   <article class='article-tweet'>
@@ -74,7 +82,16 @@ $(document).ready(function() {
   //page loads with tweets and hides error msgs
   $('.error-1').hide();
   $('.error-2').hide();
+  $('.new-tweet').show();
   loadTweets();
+
+  $('.new-tweet-prompt').on('click', function() {
+    if ( $( ".new-tweet" ).first().is( ":hidden" ) ) {
+      $( ".new-tweet" ).slideDown( "slow" );
+    } else {
+      $( ".new-tweet" ).hide();
+    }
+  })
 
   $('#submit-tweet').on('submit', function(event) {
     //loads page without refresh
@@ -105,6 +122,8 @@ $(document).ready(function() {
 
       //clears tweet form once posted
       $('form').trigger('reset');
+      //resets counter to 140 char
+      $('.counter').text(140);
 
     }
 
