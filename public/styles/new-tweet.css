@@ -1,7 +1,4 @@
-
-.container {
-  display: flex;
-}
+/* main container for new tweets*/
 
 .new-tweet {
   display: flex;
@@ -11,10 +8,11 @@
 }
 
 /* form input field */
-input, textarea, style {
+
+input, style {
   display: flex;
   width: 100%;
-  height: 5em;
+  height: 3em;
   padding-top: 0.30em;
   background-color: transparent;
   border: none;
@@ -28,6 +26,7 @@ input, textarea, style {
 }
 
 /* area with the form input, bottom and 'compose tweet' */
+
 .tweet-form {
   display: flex;
   flex-direction: column;
@@ -38,6 +37,7 @@ input, textarea, style {
 }
 
 /* character counter and button */
+
 .tweet-form-footer {
   display: flex;
   padding-top: 0.60em;
@@ -48,6 +48,7 @@ input, textarea, style {
 }
 
 /* button specific */
+
 [type=submit], button {
   background-color: #4056A1;
   font-size: medium;
@@ -59,13 +60,17 @@ input, textarea, style {
   padding-bottom: 4px;
 }
 
+/* turns character counter red when over 140 limit*/
+
 .red {
   color: red;
 }
 
+/*error messaging for empty or over char limit tweet submissions*/
+
 .error-1 {
   padding: 15px;
-  background-color: #f44336; 
+  background-color: #f44336;
   color: white;
   margin-bottom: 15px;
 }
