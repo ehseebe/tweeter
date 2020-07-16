@@ -63,6 +63,10 @@
     <section class="tweet-form">
 <!-- prompt header for new tweet -->
           <h2>Compose Tweet</h2>
+          <div class="error">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            Oops, gotta respect the character limits!
+          </div>
 
       <form method="post" action="/tweets" id="submit-tweet">
 <!-- form to compose tweet -->
