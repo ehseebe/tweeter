@@ -8,17 +8,18 @@
 
 //loops through tweets, applies form, outputs to page
 const renderTweets = (tweetData) => {
-  for(let item of tweetData) {
+  console.log("tweetdata", tweetData);
+  for (let item of tweetData.reverse()) {
     $('#tweet-container').append(createTweetElement(item));
-  } 
+  }
 }
 
 //tweet form
 const createTweetElement = (tweet) => {
   //need to make a function to parse date and subtract
   let readableDate = new Date(tweet.created_at);
-  
-  const $tweet =  `
+
+  const $tweet = `
   <article class='article-tweet'>
 
       <header class='article-tweet-header'>
@@ -61,47 +62,63 @@ const createTweetElement = (tweet) => {
 }
 
 //AJAX magic - handles tweet submissions, posts tweets to page
-$(document).ready(function() {
-  
-  const loadTweets = function() {
+$(document).ready(function () {
+
+  const loadTweets = function () {
     $.getJSON('http://localhost:8080/tweets', (data) => {
       console.log('success');
       renderTweets(data);
     })
-    .done(function() {
-      console.log( "second success" );
-    })
-    .fail(function() {
-      console.log( "error" );
-    })
-    .always(function() {
-      console.log( "complete" );
-    });
+      .done(function () {
+        console.log("second success");
+      })
+      .fail(function () {
+        console.log("error");
+      })
+      .always(function () {
+        console.log("complete");
+      });
   }
 
+  $('.error').hide();
   loadTweets();
 
   $('#submit-tweet').on('submit', function (event) {
     event.preventDefault();
 
-    const $tweetValue = $( this ).find('input').val();
+    const $tweetValue = $(this).find('input').val();
 
     if ($tweetValue.length < 1) {
-      alert('Enter a tweet!')
+      if ( $( ".error" ).first().is( ":hidden" ) ) {
+        $( ".error" ).slideDown( "slow" );
+      } else {
+        $( ".error" ).hide();
+      }
     } else if ($tweetValue.length > 140) {
-      alert('Your tweet is too long!')
+      if ( $( ".error" ).first().is( ":hidden" ) ) {
+        $( ".error" ).slideDown( "slow" );
+      } else {
+        $( ".error" ).hide();
+      }
     } else {
-      
-      $.post( "http://localhost:8080/tweets", ($( this ).serialize()), function(result) {
-        //empty tweet-container
-        $('#tweet-container').empty();
-        loadTweets();
-      }); 
 
-      $('form').trigger('reset');
-      
+      $('.error').hide();
+    const cleanInput = $('#tweet-text').val();
+    $('#tweet-text').val($("<div>").text(cleanInput).html())
+
+    $.post("http://localhost:8080/tweets", $(this).serialize(), function (result) {
+      //empty tweet-container
+      $('#tweet-container').empty();
+      loadTweets();
+    });
+
+    $('form').trigger('reset');
+
     }
+
+    
+
+
+  })
     
   });
-  
-})
