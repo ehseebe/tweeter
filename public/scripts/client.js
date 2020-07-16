@@ -8,15 +8,10 @@ const renderTweets = (tweetData) => {
 
 //tweet form
 const createTweetElement = (tweet) => {
-  //need to make a function to parse date and subtract
-  let readableDate = new Date(tweet.created_at);
-  let currentDate = new Date();
-  let daysPassed = new Date(currentDate-readableDate);
-
-
-  console.log("post date", readableDate, typeof readableDate)
-  console.log("todays date", currentDate);
-  console.log("days passed?", daysPassed)
+  //date from database
+  let dbDate = tweet.created_at;
+  //relative time using moment.js
+  let readableDate = moment(dbDate).fromNow();
   
 
   const $tweet = `
@@ -45,7 +40,7 @@ const createTweetElement = (tweet) => {
         <footer class='article-tweet-footer'>
 
           <span class='tweet-date'>
-            ${readableDate} days ago
+            ${readableDate}
             </span>
 
           <span class='tweet-icons'>
@@ -79,17 +74,18 @@ $(document).ready(function() {
         console.log("complete");
       });
   };
-  //page loads with tweets and hides error msgs
+  //page loads with tweets, hides error msgs, shows new-tweet form
   $('.error-1').hide();
   $('.error-2').hide();
   $('.new-tweet').show();
   loadTweets();
 
+  //nav button toggles new tweet form when clicked
   $('.new-tweet-prompt').on('click', function() {
     if ( $( ".new-tweet" ).first().is( ":hidden" ) ) {
       $( ".new-tweet" ).slideDown( "slow" );
     } else {
-      $( ".new-tweet" ).hide();
+      $( ".new-tweet" ).slideUp();
     }
   })
 
