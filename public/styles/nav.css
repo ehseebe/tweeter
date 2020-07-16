@@ -26,5 +26,27 @@
  }
 
  .new-tweet-prompt-arrows {
-   padding-top: 0.3em
+   padding-top: 0.3em;
+   animation: bounce;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+
  }
+
+@keyframes bounce {
+  20%, 50%, 80%, to{
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+  70% {
+    transform: translateY(-3px);
+  }
+  90% {
+    transform: translateY(-1px);
+  }
+}
+
+
+ 
