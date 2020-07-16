@@ -1,7 +1,6 @@
 
 //loops through tweets, applies form, outputs to page
 const renderTweets = (tweetData) => {
-  console.log("tweetdata", tweetData);
   for (let item of tweetData.reverse()) {
     $('#tweet-container').append(createTweetElement(item));
   }
