@@ -3,17 +3,14 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
-
 
 body {
   color: #545149;
@@ -22,92 +19,59 @@ body {
   font-family: Source Sans Pro;
 }
 
-/* page body for tweets */
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-left: 5%;
   margin-right: 5%;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+/* media query specs for responsive design  */
 
-
-
- /*
- at 600px, 
-  1. blue nav disappears, becomes yellow + textured!!!
-  2. logo and button remain fixed
-  3. header goes from left side to full nav placement
-  4. tweets go from right side to full body
-
-  hero = tweets! main container
-  feature = header
-
-  */
-
-  @media only screen and (max-width: 768px) {
-    nav {
-      background-color: #F2C641;
-      background-image: url("../images/profile-background.png");
-    }
-
-    .new-tweet-prompt {
-      background-color: #F2C641;
-      background-image: url("../images/profile-background.png");
-    }
+@media only screen and (max-width: 768px) {
+  nav {
+    background-color: #F2C641;
+    background-image: url("../images/profile-background.png");
   }
+  .new-tweet-prompt {
+    background-color: #F2C641;
+    background-image: url("../images/profile-background.png");
+  }
+  .profile {
+    margin-top: 3em;
+    width: 100%;
+  }
+}
 
-  @media only screen and (min-width: 768px) {
-    nav {
-      background-color: #4056A1;
-    }
-    .feature {
-      width: 33.3%;
-      line-height: 600px;
-    }
-  
-    .content {
-      width: 66.7%;
-      float: right
-    }
-  
-    .footer {
-      clear: right;
-    }
+@media only screen and (min-width: 768px) {
+  nav {
+    background-color: #4056A1;
   }
-  
-  @media only screen and (min-width: 1024px) {
-    .hero {
-      width: 33.3%;
-      float: left;
-    }
-  
-    .feature {
-      line-height: 300px;
-    }
-  
-    .menu {
-      background-color: #111111;
-      color: #f0f0f0;
-      text-align: left;
-    }
-  
-    .tagline {
-      display: inline;
-      font-style: italic;
-      font-weight: normal;
-      font-size: 12px;
-      color: tomato;
-      float: right;
-    }
-  
-    .main {
-      max-width: 1024px;
-      font-size: 16px;
-      margin: 0 auto;
-    }
+  .profile-and-tweets {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 6em;
   }
+  .profile {
+    margin-top: 1em;
+    margin-left: 5%;
+    width: 35%;
+  }
+  .container {
+    margin-left: 10%;
+    width: 65%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .profile {
+    margin-top: 1em;
+    width: 35%;
+  }
+  .container {
+    width: 65%;
+  }
+}
