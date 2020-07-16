@@ -62,9 +62,16 @@ input, textarea, style {
   color: red;
 }
 
-.error {
-  padding: 20px;
-  background-color: #f44336; /* Red */
+.error-1 {
+  padding: 15px;
+  background-color: #f44336; 
+  color: white;
+  margin-bottom: 15px;
+}
+
+.error-2 {
+  padding: 15px;
+  background-color: #f44336;
   color: white;
   margin-bottom: 15px;
 }
