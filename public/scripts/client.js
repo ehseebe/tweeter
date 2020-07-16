@@ -1,19 +1,20 @@
 
-//loops through tweets, applies form, outputs to page
+//loops through tweets, applies form, renders tweets for output to page
 const renderTweets = (tweetData) => {
   for (let item of tweetData.reverse()) {
     $('#tweet-container').append(createTweetElement(item));
   }
 };
 
-//tweet form
+//form for posted tweets
 const createTweetElement = (tweet) => {
-  //date from database
+  //tweet posting date from database
   let dbDate = tweet.created_at;
-  //relative time using moment.js
-  let readableDate = moment(dbDate).fromNow();
-  
 
+  //calculation of relative time using moment.js
+  let readableDate = moment(dbDate).fromNow();
+
+  //html for posted tweets
   const $tweet = `
   <article class='article-tweet'>
 
@@ -56,9 +57,10 @@ const createTweetElement = (tweet) => {
   return $tweet;
 };
 
-//AJAX magic - handles tweet submissions, posts tweets to page
+//AJAX magic - handles tweet submissions, posts tweets to page, error message handling and animation
 $(document).ready(function() {
 
+  //fetches JSON tweet database, error logs to ensure successful load
   const loadTweets = function() {
     $.getJSON('http://localhost:8080/tweets', (data) => {
       console.log('success');
@@ -74,28 +76,31 @@ $(document).ready(function() {
         console.log("complete");
       });
   };
+
   //page loads with tweets, hides error msgs, shows new-tweet form
+  loadTweets();
   $('.error-1').hide();
   $('.error-2').hide();
   $('.new-tweet').show();
-  loadTweets();
 
   //nav button toggles new tweet form when clicked
   $('.new-tweet-prompt').on('click', function() {
-    if ( $( ".new-tweet" ).first().is( ":hidden" ) ) {
-      $( ".new-tweet" ).slideDown( "slow" );
+    if ($(".new-tweet").first().is(":hidden")) {
+      $(".new-tweet").slideDown("slow");
     } else {
-      $( ".new-tweet" ).slideUp();
+      $(".new-tweet").slideUp();
     }
-  })
+  });
 
+  //submits tweet and loads updated page without refresh
   $('#submit-tweet').on('submit', function(event) {
-    //loads page without refresh
+
     event.preventDefault();
-    
-    //tweet text
+
+    //variable to assess contents of tweet form input
     const $tweetValue = $(this).find('input').val();
 
+    //validation of tweet length
     if ($tweetValue.length < 1) {
       $(".error-1").slideDown("slow");
 
@@ -103,15 +108,15 @@ $(document).ready(function() {
       $(".error-2").slideDown("slow");
 
     } else {
-
+      //passed validation, hides error messages for submission
       $('.error-1').slideUp();
       $('.error-2').slideUp();
 
       //escapes unsafe characters
       $('#tweet-text').val($("<div>").text($tweetValue).html());
 
+      //empties tweet-container and reloads tweet database with new tweet
       $.post("http://localhost:8080/tweets", $(this).serialize(), function(result) {
-        //empties tweet-container and reloads with new tweet
         $('#tweet-container').empty();
         loadTweets();
       });
