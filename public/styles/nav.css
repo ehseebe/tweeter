@@ -1,51 +1,59 @@
- 
  /* nav bar with logo and tweet-prompt */
+
  nav {
-  font-family: Bungee, sans-serif;
-  color: #FFFFFF;
-  height: 5rem;
-  display: flex;
-  padding: 1.5em;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 150%;
-  position: fixed;
-  top: 0;
-  width: 100%;
+   font-family: Bungee, sans-serif;
+   color: #FFFFFF;
+   height: 3rem;
+   display: flex;
+   padding: 1em;
+   padding-top: 1.5em;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 150%;
+   position: fixed;
+   top: 0;
+   width: 100%;
  }
 
  /* tweet-prompt and arrows */
+
  .new-tweet-prompt {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  font-family: Source Sans Pro;
-  font-size: 50%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: center;
+   font-family: Source Sans Pro;
+   font-size: 50%;
  }
+
+ /* seamless button */
+
+ button:focus {
+   outline: none;
+   border: none;
+ }
+
+ /* animation of arrows */
 
  .new-tweet-prompt-arrows {
    padding-top: 0.3em;
+   outline: none;
    animation: bounce;
    animation-duration: 2s;
    animation-iteration-count: infinite;
-
  }
 
-@keyframes bounce {
-  20%, 50%, 80%, to{
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-6px);
-  }
-  70% {
-    transform: translateY(-3px);
-  }
-  90% {
-    transform: translateY(-1px);
-  }
-}
-
-
- 
+ @keyframes bounce {
+   20%, 50%, 80%, to {
+     transform: translateY(0);
+   }
+   40% {
+     transform: translateY(-6px);
+   }
+   70% {
+     transform: translateY(-3px);
+   }
+   90% {
+     transform: translateY(-1px);
+   }
+ }
