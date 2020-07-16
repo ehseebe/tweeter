@@ -18,7 +18,7 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 25px;
+  font-size: 1.5625em;
   font-family: Source Sans Pro;
 }
 
@@ -35,10 +35,79 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- footer {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: medium;
-   height: 80px;
- }
+
+
+ /*
+ at 600px, 
+  1. blue nav disappears, becomes yellow + textured!!!
+  2. logo and button remain fixed
+  3. header goes from left side to full nav placement
+  4. tweets go from right side to full body
+
+  hero = tweets! main container
+  feature = header
+
+  */
+
+  @media only screen and (max-width: 768px) {
+    nav {
+      background-color: #F2C641;
+      background-image: url("../images/profile-background.png");
+    }
+
+    .new-tweet-prompt {
+      background-color: #F2C641;
+      background-image: url("../images/profile-background.png");
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    nav {
+      background-color: #4056A1;
+    }
+    .feature {
+      width: 33.3%;
+      line-height: 600px;
+    }
+  
+    .content {
+      width: 66.7%;
+      float: right
+    }
+  
+    .footer {
+      clear: right;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .hero {
+      width: 33.3%;
+      float: left;
+    }
+  
+    .feature {
+      line-height: 300px;
+    }
+  
+    .menu {
+      background-color: #111111;
+      color: #f0f0f0;
+      text-align: left;
+    }
+  
+    .tagline {
+      display: inline;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 12px;
+      color: tomato;
+      float: right;
+    }
+  
+    .main {
+      max-width: 1024px;
+      font-size: 16px;
+      margin: 0 auto;
+    }
+  }
