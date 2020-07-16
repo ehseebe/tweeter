@@ -1,10 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-
 
 //loops through tweets, applies form, outputs to page
 const renderTweets = (tweetData) => {
@@ -12,7 +5,7 @@ const renderTweets = (tweetData) => {
   for (let item of tweetData.reverse()) {
     $('#tweet-container').append(createTweetElement(item));
   }
-}
+};
 
 //tweet form
 const createTweetElement = (tweet) => {
@@ -59,62 +52,63 @@ const createTweetElement = (tweet) => {
   </article>`;
 
   return $tweet;
-}
+};
 
 //AJAX magic - handles tweet submissions, posts tweets to page
-$(document).ready(function () {
+$(document).ready(function() {
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.getJSON('http://localhost:8080/tweets', (data) => {
       console.log('success');
       renderTweets(data);
     })
-      .done(function () {
+      .done(function() {
         console.log("second success");
       })
-      .fail(function () {
+      .fail(function() {
         console.log("error");
       })
-      .always(function () {
+      .always(function() {
         console.log("complete");
       });
-  }
-
+  };
+  //page loads with tweets and hides error msgs
   $('.error-1').hide();
   $('.error-2').hide();
   loadTweets();
 
-  $('#submit-tweet').on('submit', function (event) {
+  $('#submit-tweet').on('submit', function(event) {
+    //loads page without refresh
     event.preventDefault();
-
+    
+    //tweet text
     const $tweetValue = $(this).find('input').val();
 
     if ($tweetValue.length < 1) {
-      $( ".error-1" ).slideDown( "slow" );
-  
+      $(".error-1").slideDown("slow");
+
     } else if ($tweetValue.length > 140) {
-        $( ".error-2" ).slideDown( "slow" );
+      $(".error-2").slideDown("slow");
 
     } else {
 
-    $('.error-1').slideUp();
-    $('.error-2').slideUp();
-    const cleanInput = $('#tweet-text').val();
-    $('#tweet-text').val($("<div>").text(cleanInput).html())
+      $('.error-1').slideUp();
+      $('.error-2').slideUp();
 
-    $.post("http://localhost:8080/tweets", $(this).serialize(), function (result) {
-      //empty tweet-container
-      $('#tweet-container').empty();
-      loadTweets();
-    });
+      //escapes unsafe characters
+      $('#tweet-text').val($("<div>").text($tweetValue).html());
 
-    $('form').trigger('reset');
+      $.post("http://localhost:8080/tweets", $(this).serialize(), function(result) {
+        //empties tweet-container and reloads with new tweet
+        $('#tweet-container').empty();
+        loadTweets();
+      });
+
+      //clears tweet form once posted
+      $('form').trigger('reset');
 
     }
 
-    
-
-
-  })
-    
   });
+
+});
