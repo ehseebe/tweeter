@@ -19,6 +19,7 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -33,7 +34,7 @@
       <span>tweeter</span>  
 
 <!-- nav new tweet prompt with arrows -->
-      <span class="new-tweet-prompt">
+      <button class="new-tweet-prompt">
           <span class="new-tweet-prompt-text">
             <b>Write</b> a new tweet
           </span>
@@ -41,7 +42,7 @@
           <div class="new-tweet-prompt-arrows">
           <img src="/images/nav-red-arrows.png" alt="Red arrows" width="15" height="17">
           </div>
-      </span>
+      </button>
       
     </nav>
 
@@ -52,7 +53,7 @@
         </div>
   
         <div>
-          <h2>Your Name</h2>
+          <h2>@ehseebe</h2>
         </div>
       </header>
 
@@ -62,7 +63,7 @@
   <section class="new-tweet">
     <section class="tweet-form">
 <!-- prompt header for new tweet and error messages -->
-          <h2>Compose Tweet</h2>
+          What are you humming about?
           <div class="error-1">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
             Oops, your tweet is empty ⛔️
@@ -75,7 +76,7 @@
 
       <form method="post" action="/tweets" id="submit-tweet">
 <!-- form to compose tweet -->
-      <input type="text" name="text" id="tweet-text" placeholder="What are you humming about?"/>
+      <input type="text" name="text" id="tweet-text"/>
 <!-- contains tweet button and character counter -->
             <section class="tweet-form-footer">
             <button type="submit">Tweet</button>
