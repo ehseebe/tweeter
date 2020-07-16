@@ -1,8 +1,7 @@
-
 /* profile picture, name and background */
+
 .profile {
     display: flex;
-    margin-top: 6rem;
     height: 15em;
     justify-content: center;
     align-items: center;
@@ -12,7 +11,6 @@
     background-image: url("../images/profile-background.png");
 }
 
-.profile > #picture {
+.profile>#picture {
     padding-bottom: 1em;
 }
-
