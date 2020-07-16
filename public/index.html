@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
-    <meta charset="utf-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/posted-tweets.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+    rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/posted-tweets.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  </head>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-<!-- tweeter logo -->
-      <span>tweeter</span>  
+</head>
 
-<!-- nav new tweet prompt with arrows -->
-      <button class="new-tweet-prompt">
-          <span class="new-tweet-prompt-text">
-            <b>Write</b> a new tweet
-          </span>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
 
-          <div class="new-tweet-prompt-arrows">
-          <img src="/images/nav-red-arrows.png" alt="Red arrows" width="15" height="17">
-          </div>
-      </button>
-      
-    </nav>
+    <!-- tweeter logo -->
+    <span>tweeter</span>
 
-    <div class="profile-and-tweets">
+    <!-- nav new tweet prompt with arrows -->
+    <button class="new-tweet-prompt">
+      <span class="new-tweet-prompt-text">
+        <b>Write</b> a new tweet
+      </span>
 
-<!-- main user profile picture and name -->
-      <header class='profile'>
-        <div id='picture'>
-          <img src="/images/profile-hex.png" width="100%" height="100%"> 
-        </div>
-  
-        <div id='name'>
-          <b>Alyssa</b> BT
-        </div>
-      </header>
+      <div class="new-tweet-prompt-arrows">
+        <img src="/images/nav-red-arrows.png" alt="Red arrows" width="15" height="17">
+      </div>
+    </button>
+
+  </nav>
+
+  <div class="profile-and-tweets">
+
+    <!-- main user profile picture and name -->
+    <header class='profile'>
+      <div id='picture'>
+        <img src="/images/profile-hex.png" width="100%" height="100%">
+      </div>
+
+      <div id='name'>
+        <b>Alyssa</b> BT
+      </div>
+    </header>
 
     <!-- Page-specific (main) content here -->
-<main class="container">
+    <main class="container">
 
-  <section class="new-tweet">
-    <section class="tweet-form">
+      <section class="new-tweet">
+        <section class="tweet-form">
 
-<!-- prompt header for new tweet and error messages -->
-          
+          <!-- prompt header for new tweet and error messages -->
+
           <div class="error-1">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
             Oops, your tweet is empty!
@@ -78,32 +83,33 @@
             Oops, you're over the character limit!
           </div>
 
-      <form method="post" action="/tweets" id="submit-tweet">
-<!-- form to compose tweet -->
-            <input type="text" name="text" id="tweet-text" placeholder="What are you humming about?"/>
-<!-- contains tweet button and character counter -->
+          <form method="post" action="/tweets" id="submit-tweet">
+            <!-- form to compose tweet -->
+            <input type="text" name="text" id="tweet-text" placeholder="What are you humming about?" />
+            <!-- contains tweet button and character counter -->
             <section class="tweet-form-footer">
-            <button type="submit">Tweet</button>
+              <button type="submit">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
-          </section>   
+            </section>
 
-      </form>
+          </form>
 
-    </section>
-  </section>
+        </section>
+      </section>
 
-<!-- where posted tweets are appended -->
-  <div id="tweet-container"></div>
+      <!-- where posted tweets are appended -->
+      <div id="tweet-container"></div>
 
-</div>
-</main>
+  </div>
+  </main>
 
-    <footer>
-      <span class="footer-text">
-        You made it! 🌟 
-        © Lighthouse Labs & @ehseebe
-      </span>
-    </footer>
+  <footer>
+    <span class="footer-text">
+      You made it! 🌟
+      © Lighthouse Labs & @ehseebe
+    </span>
+  </footer>
 
-  </body>
+</body>
+
 </html>
