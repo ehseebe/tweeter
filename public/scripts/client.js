@@ -80,7 +80,8 @@ $(document).ready(function () {
       });
   }
 
-  $('.error').hide();
+  $('.error-1').hide();
+  $('.error-2').hide();
   loadTweets();
 
   $('#submit-tweet').on('submit', function (event) {
@@ -89,20 +90,15 @@ $(document).ready(function () {
     const $tweetValue = $(this).find('input').val();
 
     if ($tweetValue.length < 1) {
-      if ( $( ".error" ).first().is( ":hidden" ) ) {
-        $( ".error" ).slideDown( "slow" );
-      } else {
-        $( ".error" ).hide();
-      }
+      $( ".error-1" ).slideDown( "slow" );
+  
     } else if ($tweetValue.length > 140) {
-      if ( $( ".error" ).first().is( ":hidden" ) ) {
-        $( ".error" ).slideDown( "slow" );
-      } else {
-        $( ".error" ).hide();
-      }
+        $( ".error-2" ).slideDown( "slow" );
+
     } else {
 
-      $('.error').hide();
+    $('.error-1').slideUp();
+    $('.error-2').slideUp();
     const cleanInput = $('#tweet-text').val();
     $('#tweet-text').val($("<div>").text(cleanInput).html())
 
