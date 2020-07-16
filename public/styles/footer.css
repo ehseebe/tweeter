@@ -2,5 +2,14 @@
 .footer-text {
   display: flex;
   color:  #545149;
+  height: 5rem;
+  justify-content: center;
   align-items: center;
+  font-size: medium;
 }
+
+
+/*add a new div that has header and container
+
+remove display flex from body
+
