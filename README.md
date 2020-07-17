@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Tweeter screenshots
 
-[Full-desktop view] (https://github.com/ehseebe/tweeter/blob/master/docs/Tweeter%20-%20ehseebe%20-%20Full%20desktop%20view.png?raw=true)
-[Mid-desptop view with error message] (https://github.com/ehseebe/tweeter/blob/master/docs/Tweeter%20-%20ehseebe%20-%20Mid-desktop%20view%20-%20error%20msg.png?raw=true)
-[Mobile view] (https://github.com/ehseebe/tweeter/blob/master/docs/Tweeter%20-%20ehseebe%20-%20Mobile%20view.png?raw=true)
+![Full-desktop view](https://github.com/ehseebe/tweeter/blob/master/docs/Tweeter-ehseebe-Full-desktop-view.png?raw=true)
+![Mid-desptop view with error message](https://github.com/ehseebe/tweeter/blob/master/docs/Tweeter-ehseebe-Mid-desktop-view-error-msg.png?raw=true)
+![Mobile view](https://github.com/ehseebe/tweeter/blob/master/docs/Tweeter-ehseebe-Mobile-view.png?raw=true)
 
 ## Getting Started
 
